@@ -12,7 +12,7 @@ def borrar_texto():
 
 def chat_gpt():
     borrar_texto()
-    openai.api_key = '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'
+    openai.api_key = 'aca va la api key que lo obtienes en tu perfil personal de openAI'
 
     my_prompt = input_textbox.get("1.0", END)
     if my_prompt == '':
