@@ -2,17 +2,25 @@ from tkinter import *
 import openai
 
 
-def imprimir_hola_mundo():
-    output_textbox.insert("end", "Hola Mundo\n")
-
-
 def borrar_texto():
     output_textbox.delete(1.0, "end")
 
 
+def copy_text():
+    texto = output_textbox.get("1.0", "end-1c")
+    windows.clipboard_clear()
+    windows.clipboard_append(texto)
+    windows.update()
+
+
+def new_prompt():
+    input_textbox.delete('1.0', END)
+    input_textbox.see('1.0')
+
+
 def chat_gpt():
     borrar_texto()
-    openai.api_key = 'aca va la api key que lo obtienes en tu perfil personal de openAI'
+    openai.api_key = 'aca va tu propia api key que la encuentras en tu perfil de openia'
 
     my_prompt = input_textbox.get("1.0", END)
     if my_prompt == '':
@@ -79,10 +87,27 @@ if __name__ == '__main__':
     output_textbox.pack(pady=5)
 
     # Make a custom button
-    button = Button(windows, text="Responder", bg="gray15", fg="white", relief="flat", cursor="hand2", bd=0, padx=10,
+    button_response = Button(windows, text="Responder", bg="black", fg="white", relief="flat", cursor="hand2", bd=0, padx=10,
                     command=chat_gpt)
-    button.config(width=10, height=2, borderwidth=0, highlightthickness=0, highlightbackground="gray",
+    button_response.config(width=10, height=2, borderwidth=0, highlightthickness=0, highlightbackground="gray",
                   highlightcolor="gray", bd=0, pady=0, padx=10, takefocus=0)
-    button.pack(pady=5)
+    button_response.pack(pady=5)
+    button_response.place(x=200, y=600)
 
+    button_copy = Button(windows, text="Copiar", bg="gray15", fg="white", relief="flat", cursor="hand2", bd=0,padx=10,
+                             command=copy_text)
+    button_copy.config(width=10, height=2, borderwidth=0, highlightthickness=0, highlightbackground="gray",
+                           highlightcolor="gray", bd=0, pady=0, padx=10, takefocus=0)
+    button_copy.pack(pady=5)
+    button_copy.place(x=300, y=600)
+
+
+    button_new_prompt = Button(windows, text="Nueva Pregunta", bg="white", fg="black", relief="flat", cursor="hand2", bd=0,padx=10,
+                             command=new_prompt)
+    button_new_prompt.config(width=10, height=2, borderwidth=0, highlightthickness=0, highlightbackground="gray",
+                           highlightcolor="gray", bd=0, pady=0, padx=10, takefocus=0)
+    button_new_prompt.pack(pady=5)
+    button_new_prompt.place(x=400, y=600)
+
+    windows.bind('<Return>', lambda event: chat_gpt())
     windows.mainloop()
