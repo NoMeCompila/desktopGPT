@@ -1,5 +1,6 @@
-import textwrap
 from tkinter import *
+
+
 
 if __name__ == '__main__':
     # create a windows and set a title
@@ -20,12 +21,12 @@ if __name__ == '__main__':
 
     # chat text label config
     input_label = Label(windows,
-                        text="Igresa una pregunta, una petición, un texto a resumir, un listado, etc."
-                             "\nTu imaginación es el límite",
+                        text="PROMPT",
                         bg="#444654")
     input_label.config(fg="white", font=("Roboto", 12))
-    input_label.pack(pady=10)
+    input_label.pack(pady=5)
 
+    # text box to enter prompt
     input_textbox = Text\
             (
                 windows,
@@ -39,16 +40,32 @@ if __name__ == '__main__':
             )
     input_textbox.pack(pady=10)
 
-    # button = Button(windows, text="Haz clic aquí") # command=button_click
-    # button.pack()
+    output_label = Label(windows,
+                        text="OUTPUT",
+                        bg="#444654")
+    output_label.config(fg="white", font=("Roboto", 12))
+    output_label.pack(pady=5)
 
-    # Crear un botón y asociar la función de clic
-    button = Button(windows, text="Haz clic aquí", bg="gray15", fg="white", relief="flat", cursor="hand2", bd=0, padx=10)
+    # create an output textbox
+    output_textbox = Text\
+            (
+                windows,
+                height=18,
+                width=70,
+                bg="#343541",
+                fg="white",
+                font=("Roboto", 12),
+                highlightthickness=1,
+                highlightbackground="white"
+            )
+    output_textbox.pack(pady=5)
 
-    # Establecer el radio de borde para hacer el botón redondeado
+
+    def imprimir_hola_mundo():
+        output_textbox.insert("end", "Hola Mundo\n")
+    # Make a custom button
+    button = Button(windows, text="Responder", bg="gray15", fg="white", relief="flat", cursor="hand2", bd=0, padx=10, command=imprimir_hola_mundo)
     button.config(width=10, height=2, borderwidth=0, highlightthickness=0, highlightbackground="gray",
                   highlightcolor="gray", bd=0, pady=0, padx=10, takefocus=0, )
-
-    # Agregar el botón a la ventana
-    button.pack(pady=10)
+    button.pack(pady=5)
     windows.mainloop()
