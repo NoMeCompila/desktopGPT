@@ -31,7 +31,7 @@ sistemas operativos. Estoy muy contento de haber puesto en práctica todo lo que
 <p>
   El objetivo principal era poner en práctica lo aprendido durante la semana y aprovechar las bondades de las nuevas tecnologias como chatGPT.
   Por otro lado también es obtener un chat sencillo, rápida y de facil acceso que seimpre esté a mano para resolver nuestras dudas o pedir información.
-  También compartirlo como código abiero por si otros colaboradores quieren hacer su propia versión.
+  También compartirlo como código abierto por si otros colaboradores quieren hacer su propia versión.
 </p>
 <hr>
 <h2 align="center"> Tecnologías usadas </h2>
