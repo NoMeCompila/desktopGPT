@@ -41,7 +41,7 @@ sistemas operativos. Estoy muy contento de haber puesto en práctica todo lo que
     <td><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-512.png" width="200" alt="Python"></td>
     <td><img src="https://pbs.twimg.com/media/Fn5vzFqWAAsB_VG.png:large" alt="Imagen 2" width=200 alt="OpenAI"></td>
     <td><img src="https://image.pngaaa.com/174/4152174-middle.png" width="200" alt="Pyinstaller"></td>
-    <td><img src="https://www.skillseekho.com/wp-content/uploads/2022/09/tkinter-logo.png" width="200" alt="Tkinter"></td>
+    <td><img src="https://3.bp.blogspot.com/-k8yq2zNv2M0/Vn26DopMriI/AAAAAAAACoo/bPookqBjUUk/s1600/tkinter1.png" width="200" alt="Tkinter"></td>
   </tr>
   <tr align="center">
     <td>Python</td>
